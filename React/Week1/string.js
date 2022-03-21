@@ -1,3 +1,4 @@
+
 // A Javascript string is a sequence of characters enclosed in double or single quotes
 console.log("This is a string");
 console.log('This is also a string');

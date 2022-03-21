@@ -1,4 +1,3 @@
-import type { Node } from 'react';
 import React from 'react';
 import { Component } from 'react';
 import {
@@ -24,7 +23,6 @@ class MyFirstApp extends Component {
         );
     }
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
