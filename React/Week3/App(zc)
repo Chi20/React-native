@@ -1,0 +1,167 @@
+import React, { Component } from 'react';
+import { StyleSheet, View,Image,Dimensions} from 'react-native';
+import { Table, Row, Rows } from 'react-native-table-component';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tableHead: ['Lastname', 'Firstname', 'city'],
+      tableData: [
+        ['Zhang', 'San', 'Beijing'],
+        ['Li', 'Si', 'Shanghai'],
+        ['Lin', 'Yi', 'Shenzhen'],
+        ['Wang', 'Jianguo', 'Guangzhou'],
+        ['Chen', 'Qiuwen', 'Beijing'],
+        ['Zhou', 'Yunyi', 'Shanghai'],
+        ['Du', 'Cheng', 'Shenzhen'],
+        ['Shen', 'Yi', 'Guangzhou'],
+      ]
+    }
+  }
+
+  render() {
+    const state = this.state;
+    return (
+      <View style={styles.container}>
+        <Table borderStyle={styles.border}>
+          <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
+          <Rows data={state.tableData} textStyle={styles.text}/>
+        </Table>
+      </View>
+    )
+  }
+}
+
+const images=[
+    require('./img/pic1.png'),
+    require('./img/pic2.png'),
+    require('./img/pic3.png'),
+    require('./img/pic4.png'),
+    require('./img/pic5.png'),
+    require('./img/pic6.png'),
+    require('./img/pic7.png'),
+    require('./img/pic8.png'),
+    require('./img/pic9.png'),
+    require('./img/pic10.png'),
+    require('./img/pic11.png'),
+    // require('./img/pic12.png'),
+]
+
+class ShowImage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tableHead: [<Image
+                  style={styles.image1}
+                  source={images[0]}
+                  />],
+      tableData: [
+        [<Image
+           style={styles.image2}
+           source={images[1]}
+           />,
+           <Image
+             style={styles.image2}
+             source={images[2]}
+             />],
+        [<Image
+           style={styles.image3}
+           source={images[3]}
+           />,
+           <Image
+          style={styles.image3}
+          source={images[4]}
+          />,
+          <Image
+            style={styles.image3}
+            source={images[5]}
+            />],
+        [<Image
+           style={styles.image3}
+           source={images[6]}
+           />,
+           <Image
+          style={styles.image3}
+          source={images[7]}
+          />,
+          <Image
+            style={styles.image3}
+            source={images[8]}
+            />],
+            [<Image
+           style={styles.image2}
+           source={images[9]}
+           />,
+           <Image
+             style={styles.image2}
+             source={images[10]}
+             />],
+         [<Image
+           style={styles.image1}
+           source={images[11]}
+           />],
+      ]
+    }
+  }
+
+  render() {
+    const state = this.state;
+    return (
+      <View style={styles.imagecontainer}>
+        <Table borderStyle={{borderWidth: 1, borderColor: 'green'}}>
+          <Row data={state.tableHead}  textStyle={styles.text}/>
+          <Rows data={state.tableData} textStyle={styles.text}/>
+        </Table>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  border:{
+        borderWidth: 2,
+        borderColor: 'black'
+  },
+  container: {
+        flex: 1,
+        padding: 16,
+        paddingTop: 30,
+        backgroundColor: 'white'
+        },
+    imagecontainer: {
+            flex: 1,
+            paddingTop: 15,
+            backgroundColor: 'white'
+            },
+  head: {
+        height: 40,
+        backgroundColor: 'white'
+        },
+  text: {
+        margin: 6
+        },
+  image2: {
+        width:Dimensions.get('window').width/2-4,
+        height:Dimensions.get('window').width/3-8,
+        margin:2,
+        padding:2,
+        backgroundColor:'white'
+    },
+    image1: {
+            width:Dimensions.get('window').width-4,
+            height:Dimensions.get('window').width/3-8,
+            margin:2,
+            padding:2,
+            backgroundColor:'white'
+        },
+    image3: {
+            width:Dimensions.get('window').width/3-4,
+            height:Dimensions.get('window').width/4-8,
+            margin:2,
+            padding:2,
+            backgroundColor:'white'
+        }
+});
+
+export default ShowImage;
