@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { Image,View,Pressable,FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
-import users from './user.js'
-var p = users
+// import users from './user.js'
 
+fetch("https://api.github.com/users")
+.then((response)=>response.json())
+.then((data) =>
+    setUsers(data),
+)
+.catch(err => {
+      console.log(err);
+});
+var p = users
 const App = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [flag,setFlag] = useState(null)
@@ -48,6 +56,14 @@ const App = () => {
   );
 
 
+  const componentDidMount=()=>{
+    fetch('https://api.github.com/users')
+        .then(response => response.json())
+        .then(data => this.setState({
+            users:data
+        }))
+        .catch(error => alert(error))
+}
 
 
   const renderItem = ({ item }) => {

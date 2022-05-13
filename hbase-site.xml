@@ -1,0 +1,22 @@
+<configuration>
+    <property>
+        <name> hbase.rootdir </name>
+        <value>hdfs://example0:9000/hbase</value>
+        <description></drscription>
+    </property>
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+        <description></description>
+    </property>
+    <property>
+        <name>habse.zookeeper.quorum</name>
+        <value>example1,example2,example3</value>
+        <description></description>
+    </property>
+    <property>
+        <name>habse.zookeeper.property.dataDir</name>
+        <value>/var/zookeeper</value>
+        <description></description>
+    </property>
+</configuration>
