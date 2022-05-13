@@ -1,4 +1,5 @@
-#Dependency
+# 💻Dependency
+
 ```
 yarn add react-native-bouncy-checkbox
 yarn add react-native-gesture-handler
